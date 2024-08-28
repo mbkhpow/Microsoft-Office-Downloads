@@ -141,14 +141,19 @@ if ($officeedition -eq 1) {
 }
 $fileitem = Get-ChildItem -Path "C:\" -filter "office*"
 $filename = $fileitem.Name
+
 Write-Host ""
 Write-host "The file name is: $filename"
+
 $imagepath = "C:\"
 Mount-DiskImage -ImagePath $imagepath\$filename
+
 $udfvolume = Get-Volume | Where-Object FileSystem -eq "UDF" | Select-Object -First 1 -ExpandProperty DriveLetter
 $setup = ":/Office/Setup64"
+
 Start-Sleep -Seconds 5
+
 $exepath = $udfvolume+$setup
-Write-Host $exepath
+Write-Host "Starting $exepath"
 Start-Process -FilePath $exepath
 Dismount-DiskImage -ImagePath $imagepath\$filepath
