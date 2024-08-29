@@ -1,4 +1,6 @@
-﻿$download = "Please wait while your download finishes"
+﻿# fetch differents links
+
+$download = "Please wait while your download finishes"
 $complete = "Your download has finished"
 
 $office2021professional = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/Professional2021Retail.img"
@@ -15,6 +17,8 @@ $office2016professional = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97
 $office2016professionalplus = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlusRetail.img"
 $office2016homestudent = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/HomeStudentRetail.img"
 $office2016homebusiness = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/HomeBusinessRetail.img"
+
+# program start 
 
 Clear-Host
 Write-Host ""
@@ -140,20 +144,40 @@ if ($officeedition -eq 1) {
     }
 }
 
-$fileitem = Get-ChildItem -Path "C:\" -filter "office*"
+# find the downloaded .img file
+
+$fileitem = Get-ChildItem -Path $imagepath -filter "office*"
 $filename = $fileitem.Name
 
 Write-Host ""
 Write-host "The file name is: $filename"
 
+# mount the downloaded image
+
 $imagepath = "C:\"
 Mount-DiskImage -ImagePath $imagepath\$filename
 
+# find the drive letter in which the image is mounted
 $udfvolume = Get-Volume | Where-Object FileSystem -eq "UDF" | Select-Object -First 1 -ExpandProperty DriveLetter
+
+#check system architecture
+
 $setup = ":/Office/Setup64"
+$setup32 = ":/Office/Setup32"
 
 Start-Sleep -Seconds 5
+Write-Host ""
+Write-Host "Is your computer 64bit or 32bit?"
+Write-Host "1. 64bit"
+Write-Host "2. 32bit"
+$archi = Read-Host("Number")
 
-$exepath = $udfvolume+$setup
-Write-Host "Starting $exepath"
+# execute the correct file depending on the architecture
+if ($archi -eq 1)
+{$exepath = $udfvolume+$setup
+Write-Host "Starting $exepath"}
+
+elseif ($archi -eq 2){$exepath = $udfvolume+$setup32
+Write-Host "Starting $exepath"}
+
 Start-Process -FilePath $exepath
