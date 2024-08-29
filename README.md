@@ -1,12 +1,13 @@
 **this is a simple 150 line script for the automatic installation of possible Office editions directly from microsoft servers**
 
-_ make sure to set the execution policy to unrestricted in powershell_
-```Set-ExecutionPolicy Unrestricted```
+make sure to set the execution policy to unrestricted in powershell before starting
+`Set-ExecutionPolicy Unrestricted`
 
 # How to use it?
 1. download and decompress the officescript-master.zip folder
-2. using PowerShell in administrator mode, navigate to the folder (C:/Users/(YourUserName)/Downloads/officescript-main) in PowerShell`
-4. in PowerShell, do 
+2. using PowerShell in administrator mode, navigate to the folder 
+> (C:/Users/(YourUserName)/Downloads/officescript-main) in PowerShell`
+3. in PowerShell, do 
 > ./officescript.ps1
 
 ## Wait!
