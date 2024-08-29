@@ -18,6 +18,10 @@ $office2016professionalplus = "https://officecdn.microsoft.com/db/492350f6-3a01-
 $office2016homestudent = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/HomeStudentRetail.img"
 $office2016homebusiness = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/HomeBusinessRetail.img"
 
+
+$office365professionalplus = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img"
+$office365business = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/fr-fr/O365BusinessRetail.img"
+$office365homepremium = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/fr-fr/O365HomePremRetail.img"
 # program start 
 
 Clear-Host
@@ -26,12 +30,43 @@ Write-Host "OfficeScript V.1.0"
 Write-Host ""
 Write-Host "Select your Microsoft Office edition (more will be added later!)"
 Write-Host ""
-Write-Host "1. Office 2021"
-Write-Host "2. Office 2019"
-Write-Host "3. Office 2016"
+Write-Host "1. Office 365"
+Write-Host "2. Office 2021"
+Write-Host "3. Office 2019"
+Write-Host "4. Office 2016"
 $officeedition = Read-Host "Number"
+ if($officeedition -eq 1){
+    Write-Host ""
+    Write-Host ""
+    Write-Host "Select Your Office 365 edition"
+    Write-Host ""
+    Write-Host "1. Office 365 Professional Plus"
+    Write-Host "2. Office 365 Home Premium"
+    Write-Host "3. Office 365 Business"
+    Write-Host ""
+    Write-Host "For a comparison between these versions go to:"
+    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
+    $office365edition = Read-Host "Number"
 
-if ($officeedition -eq 1) {
+    if ($office365edition -eq 1){
+    Write-Host ""
+    Wrte-Host $download
+    Invoke-WebRequest -Uri $office365professionalplus -OutFile "C:/office365professionalplus.img"
+    Write-Host $complete}
+
+    elseif($office365edition -eq 2){
+    Write-Host ""
+    Wrte-Host $download
+    Invoke-WebRequest -Uri $office365homepremium -OutFile "C:/office365homepremium.img"
+    Write-Host $complete}
+
+    elseif($office365edition -eq 3){
+    Write-Host ""
+    Wrte-Host $download
+    Invoke-WebRequest -Uri $office365business -OutFile "C:/office365business.img"
+    Write-Host $complete}
+ }
+ elseif ($officeedition -eq 2) {
     Write-Host ""
     Write-Host ""
     Write-Host "Select Your Office 2021 edition"
@@ -69,7 +104,8 @@ if ($officeedition -eq 1) {
         Invoke-WebRequest -Uri $office2021homebusiness -OutFile "C:/office2021homebusiness.img"
         Write-Host $complete
     }
-} elseif ($officeedition -eq 2) {
+}
+ elseif ($officeedition -eq 3) {
     Write-Host ""
     Write-Host ""
     Write-Host "Select Your Office 2019 edition"
@@ -104,7 +140,8 @@ if ($officeedition -eq 1) {
         Invoke-WebRequest -Uri $office2019homebusiness -OutFile "C:/office2019homebusiness.img"
         Write-Host $complete
     }
-} elseif ($officeedition -eq 3) {
+}
+ elseif ($officeedition -eq 4) {
     Write-Host ""
     Write-Host ""
     Write-Host "Select Your Office 2016 edition"
