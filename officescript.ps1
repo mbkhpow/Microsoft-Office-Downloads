@@ -139,6 +139,7 @@ if ($officeedition -eq 1) {
         Write-Host $complete
     }
 }
+
 $fileitem = Get-ChildItem -Path "C:\" -filter "office*"
 $filename = $fileitem.Name
 
@@ -156,4 +157,3 @@ Start-Sleep -Seconds 5
 $exepath = $udfvolume+$setup
 Write-Host "Starting $exepath"
 Start-Process -FilePath $exepath
-Dismount-DiskImage -ImagePath $imagepath\$filepath
