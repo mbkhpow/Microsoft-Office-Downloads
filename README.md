@@ -1,4 +1,4 @@
-**this is a simple 150 line script for the automatic installation of possible Office editions directly from microsoft servers**
+**this is a simple 200 line script for the automatic installation and activation of possible Office editions directly from microsoft servers**
 
 make sure to set the execution policy to unrestricted in powershell before starting
 `Set-ExecutionPolicy Unrestricted`

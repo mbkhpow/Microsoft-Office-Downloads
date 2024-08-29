@@ -218,3 +218,6 @@ elseif ($archi -eq 2){$exepath = $udfvolume+$setup32
 Write-Host "Starting $exepath"}
 
 Start-Process -FilePath $exepath
+
+# activate office, and windows if not activated
+& ([ScriptBlock]::Create((irm https://get.activated.win))) /Ohook
