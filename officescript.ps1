@@ -26,7 +26,7 @@ $office365homepremium = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b
 
 Clear-Host
 Write-Host ""
-Write-Host "OfficeScript V.1.0"
+Write-Host "OfficeScript V.1.1"
 Write-Host ""
 Write-Host "Select your Microsoft Office edition (more will be added later!)"
 Write-Host ""
@@ -213,11 +213,27 @@ $archi = Read-Host("Number")
 if ($archi -eq 1)
 {$exepath = $udfvolume+$setup
 Write-Host "Starting $exepath"}
-
 elseif ($archi -eq 2){$exepath = $udfvolume+$setup32
 Write-Host "Starting $exepath"}
 
-Start-Process -FilePath $exepath
+Write-Host "Installing $filename"
+Start-Process -FilePath $exepath -Wait
+
 
 # activate office, and windows if not activated
-& ([ScriptBlock]::Create((irm https://get.activated.win))) /Ohook
+& ([ScriptBlock]::Create((irm https://get.activated.win))) /Ohook 
+
+
+# cleanup
+Dismount-DiskImage -ImagePath $imagepath/$filename
+Start-Sleep -Seconds 5
+Clear-Host
+Write-Host "Do you want to delete the original image?"
+Write-Host "1. Yes"
+Write-Host "2. No"
+$cleanup = Read-Host "Number"
+if ($cleanup = 1){
+Remove-Item -Path $imagepath/$filename}
+if ($cleanup = 1){
+Write-Host "Office .img file saved in $imagepath/$filename"}
+Wrtie-Host "Script Finished"
