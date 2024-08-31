@@ -14,6 +14,6 @@ make sure to set the execution policy to unrestricted in powershell before start
 2. this is a really primitive version of the script, another update is on the way!
 3. if you encounter a problem, don't hesitate to open an issue
 4. cleaning is now available! (V1.1)
-5. activation methods will be added later
+5. activation methods are in! (V1.1)
 
 If this script helped you, help it by starring the repository!

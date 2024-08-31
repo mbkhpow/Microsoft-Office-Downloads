@@ -50,7 +50,7 @@ $officeedition = Read-Host "Number"
 
     if ($office365edition -eq 1){
     Write-Host ""
-    Wrte-Host $download
+    Write-Host $download
     Invoke-WebRequest -Uri $office365professionalplus -OutFile "C:/office365professionalplus.img"
     Write-Host $complete}
 
@@ -182,6 +182,7 @@ $officeedition = Read-Host "Number"
 }
 
 # find the downloaded .img file
+$imagepath = "C:\"
 
 $fileitem = Get-ChildItem -Path $imagepath -filter "office*"
 $filename = $fileitem.Name
@@ -191,7 +192,7 @@ Write-host "The file name is: $filename"
 
 # mount the downloaded image
 
-$imagepath = "C:\"
+
 Mount-DiskImage -ImagePath $imagepath\$filename
 
 # find the drive letter in which the image is mounted
@@ -236,4 +237,4 @@ if ($cleanup = 1){
 Remove-Item -Path $imagepath/$filename}
 if ($cleanup = 1){
 Write-Host "Office .img file saved in $imagepath/$filename"}
-Wrtie-Host "Script Finished"
+Write-Host "Script Finished"
