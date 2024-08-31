@@ -35,7 +35,9 @@ Write-Host "2. Office 2021"
 Write-Host "3. Office 2019"
 Write-Host "4. Office 2016"
 $officeedition = Read-Host "Number"
+
  if($officeedition -eq 1){
+    Clear-Host
     Write-Host ""
     Write-Host ""
     Write-Host "Select Your Office 365 edition"
@@ -67,6 +69,7 @@ $officeedition = Read-Host "Number"
     Write-Host $complete}
  }
  elseif ($officeedition -eq 2) {
+    Clear-Host
     Write-Host ""
     Write-Host ""
     Write-Host "Select Your Office 2021 edition"
@@ -106,6 +109,8 @@ $officeedition = Read-Host "Number"
     }
 }
  elseif ($officeedition -eq 3) {
+   
+    Clear-Host
     Write-Host ""
     Write-Host ""
     Write-Host "Select Your Office 2019 edition"
@@ -142,6 +147,8 @@ $officeedition = Read-Host "Number"
     }
 }
  elseif ($officeedition -eq 4) {
+   
+    Clear-Host
     Write-Host ""
     Write-Host ""
     Write-Host "Select Your Office 2016 edition"
@@ -181,7 +188,9 @@ $officeedition = Read-Host "Number"
     }
 }
 
+
 # find the downloaded .img file
+Clear-Host
 $imagepath = "C:\"
 
 $fileitem = Get-ChildItem -Path $imagepath -filter "office*"
@@ -195,6 +204,7 @@ Write-host "The file name is: $filename"
 
 Mount-DiskImage -ImagePath $imagepath\$filename
 
+
 # find the drive letter in which the image is mounted
 $udfvolume = Get-Volume | Where-Object FileSystem -eq "UDF" | Select-Object -First 1 -ExpandProperty DriveLetter
 
@@ -202,8 +212,9 @@ $udfvolume = Get-Volume | Where-Object FileSystem -eq "UDF" | Select-Object -Fir
 
 $setup = ":/Office/Setup64"
 $setup32 = ":/Office/Setup32"
-
-Start-Sleep -Seconds 5
+Write-Host ""
+Write-Host "Filename $filename mounted in $udfvolume volume"
+Start-Sleep -Seconds 3
 Write-Host ""
 Write-Host "Is your computer 64bit or 32bit?"
 Write-Host "1. 64bit"
@@ -220,10 +231,12 @@ Write-Host "Starting $exepath"}
 Write-Host "Installing $filename"
 Start-Process -FilePath $exepath -Wait
 
+Clear-Host
 
 # activate office, and windows if not activated
 & ([ScriptBlock]::Create((irm https://get.activated.win))) /Ohook 
 
+Clear-Host
 
 # cleanup
 Dismount-DiskImage -ImagePath $imagepath/$filename
