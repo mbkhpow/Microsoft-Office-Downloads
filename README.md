@@ -15,5 +15,4 @@ make sure to set the execution policy to unrestricted in powershell before start
 3. if you encounter a problem, don't hesitate to open an issue
 4. cleaning is now available! (V1.1)
 5. activation methods are in! (V1.1)
-
 If this script helped you, help it by starring the repository!
