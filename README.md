@@ -4,6 +4,12 @@ make sure to set the execution policy to unrestricted in powershell before start
 `Set-ExecutionPolicy Unrestricted`
 
 # How to use it?
+1. Open PowerShell in administrator mode
+2. type:
+> irm https://raw.githubusercontent.com/mbkhpowe/officescript/main/officescript.ps1 | iex
+
+## or...
+
 1. download and decompress the officescript-master.zip folder
 2. using PowerShell in administrator mode, navigate to the folder in PowerShell
 > (C:/Users/(YourUserName)/Downloads/officescript-main) 

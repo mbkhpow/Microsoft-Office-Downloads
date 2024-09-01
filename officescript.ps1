@@ -129,17 +129,20 @@ $officeedition = Read-Host "Number"
         Write-Host $download
         Invoke-WebRequest -Uri $office2019professional -OutFile "C:/office2019professional.img"
         Write-Host $complete
-    } elseif ($office2019edition -eq 2) {
+    } 
+    elseif ($office2019edition -eq 2) {
         Write-Host ""
         Write-Host $download
         Invoke-WebRequest -Uri $office2019professionalplus -OutFile "C:/office2019professionalplus.img"
         Write-Host $complete
-    } elseif ($office2019edition -eq 3) {
+    }
+     elseif ($office2019edition -eq 3) {
         Write-Host ""
         Write-Host $download
         Invoke-WebRequest -Uri $office2019homestudent -OutFile "C:/office2019homestudent.img"
         Write-Host $complete
-    } elseif ($office2019edition -eq 4) {
+    }
+     elseif ($office2019edition -eq 4) {
         Write-Host ""
         Write-Host $download
         Invoke-WebRequest -Uri $office2019homebusiness -OutFile "C:/office2019homebusiness.img"
