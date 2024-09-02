@@ -1,4 +1,6 @@
-﻿# fetch differents links
+﻿$validnumbers = 1,2,3,4
+
+# fetch differents links
 
 $download = "Please wait while your download finishes"
 $complete = "Your download has finished"
@@ -36,6 +38,7 @@ Write-Host "3. Office 2019"
 Write-Host "4. Office 2016"
 $officeedition = Read-Host "Number"
 
+if ($validnumbers -contains [int]$officeedition){
  if($officeedition -eq 1){
     Clear-Host
     Write-Host ""
@@ -49,6 +52,8 @@ $officeedition = Read-Host "Number"
     Write-Host "For a comparison between these versions go to:"
     Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
     $office365edition = Read-Host "Number"
+
+    if ($validnumbers -contains [int]$office365edition){
 
     if ($office365edition -eq 1){
     Write-Host ""
@@ -67,6 +72,11 @@ $officeedition = Read-Host "Number"
     Wrte-Host $download
     Invoke-WebRequest -Uri $office365business -OutFile "C:/office365business.img"
     Write-Host $complete}
+
+    }
+    else {
+    Write-Host "Wrong Number, Retry Again"
+    exit}
  }
  elseif ($officeedition -eq 2) {
     Clear-Host
@@ -82,7 +92,7 @@ $officeedition = Read-Host "Number"
     Write-Host "For a comparison between these versions go to:"
     Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
     $office2021version = Read-Host "Number"
-
+    if ($validnumbers -contains [int]$office2021version){
     if ($office2021version -eq 1) {
         Write-Host ""
         Write-Host $download
@@ -107,6 +117,10 @@ $officeedition = Read-Host "Number"
         Invoke-WebRequest -Uri $office2021homebusiness -OutFile "C:/office2021homebusiness.img"
         Write-Host $complete
     }
+  }
+    else {
+    Write-Host "Wrong Number, Retry"
+    exit }
 }
  elseif ($officeedition -eq 3) {
    
@@ -123,7 +137,7 @@ $officeedition = Read-Host "Number"
     Write-Host "For a comparison between these versions go to:"
     Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
     $office2019edition = Read-Host "Number"
-
+    if ($validnumbers -contains [int]$office2019edition){
     if ($office2019edition -eq 1) {
         Write-Host ""
         Write-Host $download
@@ -148,6 +162,10 @@ $officeedition = Read-Host "Number"
         Invoke-WebRequest -Uri $office2019homebusiness -OutFile "C:/office2019homebusiness.img"
         Write-Host $complete
     }
+  }
+    else {
+    Write-Host "Wrong Number, Retry Again"
+    exit}
 }
  elseif ($officeedition -eq 4) {
    
@@ -164,7 +182,7 @@ $officeedition = Read-Host "Number"
     Write-Host "For a comparison between these versions go to:"
     Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
     $office2016edition = Read-Host "Number"
-
+    if ($validnumbers -contains [int]$office2016edition){
     if ($office2016edition -eq 1) {
         Write-Host ""
         Write-Host $download
@@ -189,6 +207,18 @@ $officeedition = Read-Host "Number"
         Invoke-WebRequest -Uri $office2016homebusiness -OutFile "C:/office2016homebusiness.img"
         Write-Host $complete
     }
+}
+    else {
+Write-Host "Wrong number, Retry Again"
+exit
+}
+
+    
+}
+}
+else {
+Write-Host "Wrong number, Retry Again"
+exit
 }
 
 
