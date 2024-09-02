@@ -20,7 +20,7 @@ $office2016professionalplus = "https://officecdn.microsoft.com/db/492350f6-3a01-
 $office2016homestudent = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/HomeStudentRetail.img"
 $office2016homebusiness = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/HomeBusinessRetail.img"
 
-
+ù
 $office365professionalplus = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img"
 $office365business = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/fr-fr/O365BusinessRetail.img"
 $office365homepremium = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/fr-fr/O365HomePremRetail.img"
@@ -49,33 +49,33 @@ if ($validnumbers -contains [int]$officeedition){
     Write-Host "2. Office 365 Home Premium"
     Write-Host "3. Office 365 Business"
     Write-Host ""
-    Write-Host "For a comparison between these versions go to:"
-    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
+    Write-Host "For a comparison between these versions go to:" -ForegroundColor Green
+    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en" -ForegroundColor Green
     $office365edition = Read-Host "Number"
 
     if ($validnumbers -contains [int]$office365edition){
 
     if ($office365edition -eq 1){
     Write-Host ""
-    Write-Host $download
+    Write-Host $download -ForegroundColor Cyan
     Invoke-WebRequest -Uri $office365professionalplus -OutFile "C:/office365professionalplus.img"
-    Write-Host $complete}
+    Write-Host $complete -ForegroundColor Cyan} 
 
     elseif($office365edition -eq 2){
     Write-Host ""
-    Wrte-Host $download
+    Wrte-Host $download -ForegroundColor Cyan
     Invoke-WebRequest -Uri $office365homepremium -OutFile "C:/office365homepremium.img"
-    Write-Host $complete}
+    Write-Host $complete -ForegroundColor Cyan}
 
     elseif($office365edition -eq 3){
     Write-Host ""
-    Wrte-Host $download
+    Wrte-Host $download -ForegroundColor Cyan
     Invoke-WebRequest -Uri $office365business -OutFile "C:/office365business.img"
-    Write-Host $complete}
+    Write-Host $complete -ForegroundColor Cyan}
 
     }
     else {
-    Write-Host "Wrong Number, Retry Again"
+    Write-Host "Wrong Number, Retry Again" -ForegroundColor Red
     exit}
  }
  elseif ($officeedition -eq 2) {
@@ -89,33 +89,33 @@ if ($validnumbers -contains [int]$officeedition){
     Write-Host "3. Office 2021 Home Student"
     Write-Host "4. Office 2021 Home Business"
     Write-Host ""
-    Write-Host "For a comparison between these versions go to:"
-    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
+    Write-Host "For a comparison between these versions go to:" -ForegroundColor Green
+    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en" -ForegroundColor Green
     $office2021version = Read-Host "Number"
     if ($validnumbers -contains [int]$office2021version){
     if ($office2021version -eq 1) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2021professional -OutFile "C:/office2021professional.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
      elseif ($office2021version -eq 2) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2021professionalplus -OutFile "C:/office2021professionalplus.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
      elseif ($office2021version -eq 3) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2021homestudent -OutFile "C:/office2021homestudent.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
      elseif ($office2021version -eq 4) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2021homebusiness -OutFile "C:/office2021homebusiness.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
   }
     else {
@@ -134,33 +134,33 @@ if ($validnumbers -contains [int]$officeedition){
     Write-Host "3. Office 2019 Home Student"
     Write-Host "4. Office 2019 Home Business"
     Write-Host ""
-    Write-Host "For a comparison between these versions go to:"
-    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
+    Write-Host "For a comparison between these versions go to:" -ForegroundColor Green
+    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en" -ForegroundColor Green
     $office2019edition = Read-Host "Number"
     if ($validnumbers -contains [int]$office2019edition){
     if ($office2019edition -eq 1) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2019professional -OutFile "C:/office2019professional.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     } 
     elseif ($office2019edition -eq 2) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2019professionalplus -OutFile "C:/office2019professionalplus.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
      elseif ($office2019edition -eq 3) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2019homestudent -OutFile "C:/office2019homestudent.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
      elseif ($office2019edition -eq 4) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2019homebusiness -OutFile "C:/office2019homebusiness.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
   }
     else {
@@ -179,37 +179,37 @@ if ($validnumbers -contains [int]$officeedition){
     Write-Host "3. Office 2016 Home Student"
     Write-Host "4. Office 2016 Home Business"
     Write-Host ""
-    Write-Host "For a comparison between these versions go to:"
-    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en"
+    Write-Host "For a comparison between these versions go to:" -ForegroundColor Green
+    Write-Host "https://www.licencedeals.com/blogs/licencedeals-info-corner/microsoft-office-editions-comparison?lang=en" -ForegroundColor Green
     $office2016edition = Read-Host "Number"
     if ($validnumbers -contains [int]$office2016edition){
     if ($office2016edition -eq 1) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2016professional -OutFile "C:/office2016professional.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
      elseif ($office2016edition -eq 2) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2016professionalplus -OutFile "C:/office2016professionalplus.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
      elseif ($office2016edition -eq 3) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2016homestudent -OutFile "C:/office2016homestudent.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     } 
      elseif ($office2016edition -eq 4) {
         Write-Host ""
-        Write-Host $download
+        Write-Host $download -ForegroundColor Cyan
         Invoke-WebRequest -Uri $office2016homebusiness -OutFile "C:/office2016homebusiness.img"
-        Write-Host $complete
+        Write-Host $complete -ForegroundColor Cyan
     }
 }
     else {
-Write-Host "Wrong number, Retry Again"
+Write-Host "Wrong number, Retry Again" -ForegroundColor Red
 exit
 }
 
@@ -217,7 +217,7 @@ exit
 }
 }
 else {
-Write-Host "Wrong number, Retry Again"
+Write-Host "Wrong number, Retry Again" -ForegroundColor Red
 exit
 }
 
