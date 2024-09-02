@@ -279,8 +279,10 @@ Write-Host "Do you want to delete the original image?"
 Write-Host "1. Yes"
 Write-Host "2. No"
 $cleanup = Read-Host "Number"
+if ($validnumbers -contains [int]$cleanup){
 if ($cleanup = 1){
 Remove-Item -Path $imagepath/$filename}
-if ($cleanup = 1){
+if ($cleanup = 2){
 Write-Host "Office .img file saved in $imagepath/$filename"}
 Write-Host "Script Finished"
+}
