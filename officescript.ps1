@@ -38,7 +38,7 @@ Write-Host "3. Office 2019"
 Write-Host "4. Office 2016"
 $officeedition = Read-Host "Number"
 
-if ($validnumbers -contains [int]$officeedition){
+if ($validnumbers -contains $officeedition){
  if($officeedition -eq 1){
     Clear-Host
     Write-Host ""
@@ -76,6 +76,7 @@ if ($validnumbers -contains [int]$officeedition){
     }
     else {
     Write-Host "Wrong Number, Retry Again" -ForegroundColor Red
+    Start-Sleep -Seconds 2
     exit}
  }
  elseif ($officeedition -eq 2) {
@@ -119,7 +120,8 @@ if ($validnumbers -contains [int]$officeedition){
     }
   }
     else {
-    Write-Host "Wrong Number, Retry"
+    Write-Host "Wrong Number, Retry" -ForegroundColor Red
+    Start-Sleep -Seconds 2
     exit }
 }
  elseif ($officeedition -eq 3) {
@@ -164,6 +166,7 @@ if ($validnumbers -contains [int]$officeedition){
     }
   }
     else {
+    Start-Sleep -Seconds 2
     Write-Host "Wrong Number, Retry Again"
     exit}
 }
@@ -210,6 +213,7 @@ if ($validnumbers -contains [int]$officeedition){
 }
     else {
 Write-Host "Wrong number, Retry Again" -ForegroundColor Red
+Start-Sleep -Seconds 2
 exit
 }
 
@@ -218,6 +222,7 @@ exit
 }
 else {
 Write-Host "Wrong number, Retry Again" -ForegroundColor Red
+Start-Sleep -Seconds 2
 exit
 }
 
