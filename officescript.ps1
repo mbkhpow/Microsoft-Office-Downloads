@@ -1,4 +1,4 @@
-﻿$validnumbers = 1,2,3,4
+﻿$validnumbers = @(1,2,3,4)
 
 # fetch differents links
 
