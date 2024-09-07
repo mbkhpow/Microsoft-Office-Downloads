@@ -26,6 +26,7 @@ $office365homepremium = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b
 # program start 
 
 $validnumbers = @(1 ,2 ,3 ,4)
+$validnumbers | ConvertTo-Json
 Clear-Host
 Write-Host ""
 Write-Host "OfficeScript V.1.1"
