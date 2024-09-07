@@ -271,7 +271,7 @@ Start-Process -FilePath $exepath -Wait
 Clear-Host
 
 # activate office, and windows if not activated
-& ([ScriptBlock]::Create((irm https://get.activated.win))) /Ohook 
+& ([ScriptBlock]::Create((Invoke-RestMethod https://get.activated.win))) /Ohook 
 
 Clear-Host
 
