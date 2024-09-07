@@ -1,4 +1,4 @@
-﻿$validnumbers = @(1 ,2 ,3 ,4)
+﻿
 
 # fetch differents links
 
@@ -25,6 +25,7 @@ $office365business = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0
 $office365homepremium = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/fr-fr/O365HomePremRetail.img"
 # program start 
 
+$validnumbers = @(1 ,2 ,3 ,4)
 Clear-Host
 Write-Host ""
 Write-Host "OfficeScript V.1.1"
