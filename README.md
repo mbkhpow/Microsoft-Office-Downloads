@@ -1,5 +1,5 @@
 
-project not actively maintaned as before :/
+`project not actively maintaned as before :/`
 this is a simple 200 line script for the automatic installation and activation **(OHook)** of Microsoft Office
 
 make sure to set the execution policy to unrestricted in powershell before starting
