@@ -2,7 +2,7 @@
 
 # fetch differents links
 
-$download = "Please wait while your download finishes"
+$download = "Please wait while your download finishes (This could take up to an hour...)"
 $complete = "Your download has finished"
 
 $office2021professional = "https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/Professional2021Retail.img"
